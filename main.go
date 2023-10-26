@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("GitHub custom action using Docker and Go")
+	fmt.Println("begin")
+	fmt.Println("output environment variables")
+	for _, kv := range os.Environ() {
+		fmt.Println(kv)
+	}
+	fmt.Println("end")
 }

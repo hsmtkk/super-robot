@@ -3,12 +3,12 @@ name: GitHub custom action sample
 description: Github custom action sample using Docker and Go
 inputs:
   foo-input:
-    description: "bar"
+    description: "input of foo"
 outputs:
   hoge-output:
-    description: "fuga"
+    description: "output of hoge"
 runs:
   using: docker
   image: Dockerfile
-  args:
-    - ${{inputs.foo-input}}
+  env:
+    FOO_INPUT: ${{inputs.foo-input}}
