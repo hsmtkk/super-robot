@@ -32,6 +32,6 @@ func output(gitHubOutput, fooInput string) {
 
 	s := fmt.Sprintf("hoge-output=Your-input-was-%s-is-it-right?", fooInput)
 	if _, err := f.WriteString(s); err != nil {
-		log.Fatalf("failed to write string: %v", err)
+		log.Fatalf("failed to write string %s: %v", s, err)
 	}
 }
