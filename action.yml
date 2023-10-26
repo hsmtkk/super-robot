@@ -1,3 +1,4 @@
+---
 name: GitHub custom action sample
 description: Github custom action sample using Docker and Go
 inputs:
@@ -8,6 +9,6 @@ outputs:
     description: "fuga"
 runs:
   using: docker
-  image: Docker
+  image: Dockerfile
   args:
     - ${{inputs.foo-input}}
