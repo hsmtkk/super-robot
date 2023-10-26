@@ -1,0 +1,13 @@
+name: GitHub custom action sample
+description: Github custom action sample using Docker and Go
+inputs:
+  foo-input:
+    description: "bar"
+outputs:
+  hoge-output:
+    description: "fuga"
+runs:
+  using: docker
+  image: Docker
+  args:
+    - ${{inputs.foo-input}}
