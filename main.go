@@ -30,6 +30,6 @@ func output(gitHubOutput, fooInput string) {
 	}
 	defer f.Close()
 
-	s := fmt.Sprintf("Your input was %s, is it right?", fooInput)
+	s := fmt.Sprintf("hoge-output=Your-input-was-%s-is-it-right?", fooInput)
 	f.WriteString(s)
 }
