@@ -24,12 +24,14 @@ func main() {
 }
 
 func output(gitHubOutput, fooInput string) {
-	f, err := os.Open(gitHubOutput)
+	f, err := os.Create(gitHubOutput)
 	if err != nil {
 		log.Fatalf("failed to open file %s: %v", gitHubOutput, err)
 	}
 	defer f.Close()
 
 	s := fmt.Sprintf("hoge-output=Your-input-was-%s-is-it-right?", fooInput)
-	f.WriteString(s)
+	if _, err := f.WriteString(s); err != nil {
+		log.Fatalf("failed to write string: %v", err)
+	}
 }
